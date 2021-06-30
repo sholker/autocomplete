@@ -21,23 +21,29 @@ def add_2_tree_from_file(filename):
 
     except Exception as e:
         print(e)
-        # todo: change to return exception
-        raise e
+        exit(1)
 
 
 
 
 def search_in_tree(word, root=None):
-    # todo: what happend when the word is one char
+    '''
+    :param word: the word to looking for
+    :param root: the highest node by first char
+    :return: the lowest node in path is match with word
+    '''
+    # todo: what happend when the word is one char --done
+    
     if not root:
-        root = dk.get(word[0])
+        root = dk.get(word[0]) # ! get the highest node by first char, None otherwise
+    
     if root:
         if root.name ==word:
             return word[1:],root
         
         if root.children:
             if len(word) > 1:
-                # todo bad to open children twis --done
+                # todo bad to open children twice --done
                 ch = word[1]
                 child = [n for n in root.children if n.name == ch]
                 
@@ -51,7 +57,7 @@ def search_in_tree(word, root=None):
 
 
         return word[1:],root
-    return word,None
+    return word,None # ! no match charter ordanization
     
                     
 
@@ -150,16 +156,19 @@ def complite(input_key):
     '''
     lst_word=list()
     # todo: if there arent root key --done
-    if dk[input_key[0]]: # if there is a root tree for this by first char
+    if dk.get(input_key[0]): # ! if there is a root tree for this by first char
         root = dk[input_key[0]]
         if root.endpoint:
             lst_word.append(root.name)
-        if root.children:
-            w_left,root = search_in_tree(input_key) # ! to get the lower node in tree, and the latters arent exist in tree
-            if w_left: # ! the word dosent exist in tree
-                return None
-            # todo: if there no continue to input --done
-            return get_words(root)
+            if not root.children: # ! just endpoint char can be witout children
+                return lst_word
+        
+        # ! if its not endpoint its must be with children
+        w_left,root = search_in_tree(input_key) # ! to get the lowest node in tree, and the latters arent exist in tree
+        if w_left: # ! the word dosent exist in tree
+            return None
+        # todo: if there no continue to input --done
+        return get_words(root)
     return None
 
 
@@ -173,6 +182,8 @@ if __name__ == '__main__':
     setattr(Node, "endpoint", False)
     setattr(Node, "priority", 0)
     filename = './word-list-short-52.txt'
+    filename = 'C:/Users/Avigail/PycharmProjects/gcp/autocomplite/word-list-short-52.txt'
+
     add_2_tree_from_file(filename)
     # todo: update node to endpoint like add ori and then or --need to update r Node to endpoint --done
     # add_2_tree_from_file(['i','cow','cat','cow','ori','camember','camel','puppet','pull'])
