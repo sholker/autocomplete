@@ -172,7 +172,7 @@ if __name__ == '__main__':
     dk = dict()
     setattr(Node, "endpoint", False)
     setattr(Node, "priority", 0)
-    filename = 'C:/Users/Avigail/PycharmProjects/gcp/autocomplite/word-list-short-52.txt'
+    filename = './word-list-short-52.txt'
     add_2_tree_from_file(filename)
     # todo: update node to endpoint like add ori and then or --need to update r Node to endpoint --done
     # add_2_tree_from_file(['i','cow','cat','cow','ori','camember','camel','puppet','pull'])
