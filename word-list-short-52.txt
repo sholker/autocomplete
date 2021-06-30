@@ -50,14 +50,5 @@ dog
 fish
 puppy
 cat
-cat
-cat
-cat
-cat
-cat
-cat
-cat
-cat
-cat
 duck
 owl
