@@ -1,5 +1,5 @@
 # Autocomplete
-#### AutoComplite is a Python Script that provides an easy-to-use autocomplete feature for text input fields in Python applications.
+#### AutoComplete is a Python Script that provides an easy-to-use autocomplete feature for text input fields in Python applications.
 ----
 This a Python script that imports a triNode class from a module named tree. It defines a function add_2_tree_from_file to read a list of words from a file or from a provided list, and then adds each word to a trie data structure represented by an instance of the triNode class (q). Finally, it prompts the user to enter an input string and prints the autocomplete suggestions based on the trie structure.
 
@@ -16,3 +16,39 @@ Please note the following points about the code:
 The triNode class and its methods, such as add_2_tree, are assumed to be defined in the tree module.
 There seems to be a typo in the function name complite, it's likely intended to be complete.
 
+
+### Example:
+
+**Let's assume we have the following words in our trie: "cat", "dog", "cart", "car", "apple".**
+
+```
+root
+|
++- c
+   |
+   +- a
+   |  |
+   |  +- r
+   |  |  |
+   |  |  +- t (*)
+   |  |
+   |  +- t (*)
+   |
+   +- d
+      |
+      +- o
+      |  |
+      |  +- g (*)
+      |
+      +- a
+         |
+         +- r
+            |
+            +- t (*)
+```
+
+> In this visualization:
+> - Each node represents a letter in a word.
+>- The (*) indicates the end of a word.
+>- The path from the root to a node represents a word.
+>- Words with common prefixes share nodes in the trie.
