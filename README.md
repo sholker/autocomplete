@@ -15,4 +15,4 @@ Please note the following points about the code:
 
 The triNode class and its methods, such as add_2_tree, are assumed to be defined in the tree module.
 There seems to be a typo in the function name complite, it's likely intended to be complete.
-Ensure that the path to the file 'C:/Users/Avigail/PycharmProjects/gcp/autocomplite/word-list-short-52.txt' is correct and accessible.
+
