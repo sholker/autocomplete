@@ -26,7 +26,7 @@ def add_2_tree_from_file(filename):
 
 if __name__ == '__main__':
 	# filename = './word-list-short-52.txt'
-	filename = 'C:/Users/Avigail/PycharmProjects/gcp/autocomplite/word-list-short-52.txt'
+	filename = 'word-list-short-52.txt'
 	
 	add_2_tree_from_file(filename)
 	print(q.children)
